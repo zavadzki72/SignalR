@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mensagens</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="signalr-demo">
+
+        <input type="button" value="Join Group" id="btnPrivateGroup" />
+
+        <div style="display: none;" id="senderUId">1</div>
+        <form id="messageform">
+            <input type="text" id="messagebox" />
+            <input type="button" value="Send Message" id="btnSend" />
+        </form>
+        <hr />
+        <ul id="messageList" style="text-align:left;"></ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/aspnet-signalr/1.1.4/signalr.min.js'></script>
+    <script src="~/js/group.js"></script>
+</body>
+</html>
