@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SignalR.WebMvc.Models.Hubs;
+using System;
 
 namespace SignalR.WebMvc
 {
@@ -20,7 +21,15 @@ namespace SignalR.WebMvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSignalR();
+
+            if (Convert.ToBoolean(Configuration["SignalR:UseAzureSignalR"]))
+            {
+                services.AddSignalR().AddAzureSignalR(Configuration["SignalR:ConnectionString"]);
+            }
+            else
+            {
+                services.AddSignalR();
+            }
 
             services.AddCors(options =>
             {

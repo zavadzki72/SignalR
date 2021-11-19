@@ -29,7 +29,15 @@ namespace SignalR.WebApi
         {
 
             services.AddControllers();
-            services.AddSignalR();
+
+            if (Convert.ToBoolean(Configuration["SignalR:UseAzureSignalR"]))
+            {
+                services.AddSignalR().AddAzureSignalR(Configuration["SignalR:ConnectionString"]);
+            }
+            else
+            {
+                services.AddSignalR();
+            }
 
             services.AddSwaggerGen(c =>
             {
