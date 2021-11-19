@@ -17,5 +17,8 @@ Se você curtiu essa DEMO, da um star aí!
 - Swagger
 - [SignalR](https://github.com/SignalR/SignalR)
 
+## AzureSingalR:
+Você pode ter ou não um serviço na Azure para o uso do SignalR, na DEMO existe uma chave no `AppSettings` aonde você escolhe usar uma ConnectionString da azure, ou não usar.
+
 ## Sobre:
 Essa DEMO foi desenvolvida por [Marccus Zavadzki](https://github.com/zavadzki72).
